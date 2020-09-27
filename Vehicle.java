@@ -17,12 +17,17 @@ class Vehicle {
 
     }
 
-    public void run(double timeGlobal) {
+    public double run(double timeGlobal) {
+
 
         this.timeGlobal = timeGlobal;
         double deltaTime = timeGlobal - timeCurrent;
-        this.distance += deltaTime / 60.0 * speedMax;
+        double deltaDistance = deltaTime / 60.0 * speedMax;
+        
+        this.distance += deltaDistance;
         this.timeCurrent = timeGlobal;
+
+        return deltaDistance;
     
     }
 
