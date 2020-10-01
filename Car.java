@@ -4,23 +4,32 @@ class Car extends Vehicle {
 
         super(name, speedMax);
         this.tankValeu = tankValeu;
-        this.tnakContent = tnakContent;
+        this.tankContent = tnakContent;
         this.fuelConsuption = fuelConsuption;
 
     }
 
     public double tankValeu;
-    public double tnakContent;
+    public double tankContent;
     public double fuelConsuption;
 
     public double run(double timeGlobal) {
-        
+
         double deltaDistance = super.run(timeGlobal);
         double deltaFuel = deltaDistance * fuelConsuption / 100;
 
-        tnakContent -= deltaFuel;
+        tankContent -= deltaFuel; 
 
-        return deltaDistance;
+        if (tankContent < 0) 
+        {
+            deltaFuel = 0 - tankContent;
+            tankContent = 0;
+            distance += fuelConsuption / 100 / deltaFuel;
+            speedMax = 0;
+            return distance;
+        }
+        else if (tankContent == 0) return distance;
+        else {distance += deltaDistance;return deltaDistance;}
     
     }
 
@@ -28,7 +37,7 @@ class Car extends Vehicle {
     @Override
     public String toString() {
 
-        return super.toString() + "\t tank: " + tankValeu + "\t fuelConsuption: " + fuelConsuption + "\t tnakContent: " + String.format("%.3f", tnakContent);
+        return super.toString() + "\t tank: " + tankValeu + "\t fuelConsuption: " + fuelConsuption + "\t tnakContent: " + String.format("%.3f", tankContent);
 
     }
 }

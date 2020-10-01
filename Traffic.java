@@ -1,18 +1,18 @@
 class Traffic {
     
     public static void main(String[] args) {
-
-        Vehicle subaru = new Vehicle("Subaru", 60);
         
-        Car volvo = new Car("Volvo", 50, 55, 55, 13);
+        Car volvo = new Car("Volvo", 150, /*почему при изменении этого числа ничего не меняется*/55, 35, 13);
+
+        Bicycle gt = new Bicycle("gt", 100);
         
         for (double globalTime = 0.0; globalTime < 2000.0; globalTime += 1.0) {
 
-            subaru.run(globalTime);
             volvo.run(globalTime);
+            gt.run(globalTime);
 
-            System.out.println(subaru.toString());
             System.out.println(volvo.toString());
+            System.out.println(gt.toString());
 
         }
     }

@@ -19,7 +19,6 @@ class Vehicle {
 
     public double run(double timeGlobal) {
 
-
         this.timeGlobal = timeGlobal;
         double deltaTime = timeGlobal - timeCurrent;
         double deltaDistance = deltaTime / 60.0 * speedMax;
@@ -30,6 +29,10 @@ class Vehicle {
         return deltaDistance;
     
     }
+
+    /*public double getSpeed(){
+        return 0;
+    }*/
 
     @Override
     public String toString() {
