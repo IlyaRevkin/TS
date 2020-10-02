@@ -15,16 +15,16 @@ class Bicycle extends Vehicle {
         this.timeCurrent = timeGlobal;
         
         if (speedMax >= 12 && distance < 20) {return speedMax;}
-        else if (distance/20 >= i && speedMax >= 12){i++;return speedMax *= 0.80;}
-        else if (speedMax >= 12 && distance/20 <= i) {return speedMax;}
+        else if (speedMax >= 12 && distance/20 < i) {return speedMax;}
+        else if (distance/20 >= i && speedMax > 12){i++;return speedMax *= 0.80;}
         else return speedMax = 0;
     }
 
 
-    /*@Override
+    @Override
     public String toString() {
 
         return super.toString();
 
-    }*/
+    }
 }

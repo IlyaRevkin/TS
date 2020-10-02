@@ -37,7 +37,7 @@ class Vehicle {
     @Override
     public String toString() {
 
-        return "id: " + id + "\t name: " + name + "\t speed: " + speedMax + "\t distance: " + String.format("%.3f", distance);
+        return "id: " + id + "\t name: " + name + "\t speed: " + String.format("%.3f", speedMax) + "\t distance: " + String.format("%.3f", distance);
 
     }
 

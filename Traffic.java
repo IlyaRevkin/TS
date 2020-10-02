@@ -4,7 +4,7 @@ class Traffic {
         
         Car volvo = new Car("Volvo", 150, /*почему при изменении этого числа ничего не меняется*/55, 35, 13);
 
-        Bicycle gt = new Bicycle("gt", 100);
+        Bicycle gt = new Bicycle("gt", 15);
         
         for (double globalTime = 0.0; globalTime < 2000.0; globalTime += 1.0) {
 
